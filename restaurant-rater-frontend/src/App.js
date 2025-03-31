@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Table, Form, Modal } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 import { Button } from "@mui/material";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css"; // Custom CSS for styling
@@ -216,7 +216,7 @@ function App() {
               </Form.Select>
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className="border">
               {editingId ? "Update" : "Save"}
             </Button>
           </Form>
