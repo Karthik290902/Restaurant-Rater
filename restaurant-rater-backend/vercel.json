@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "src/main/java/com/karthik/restaurant_rater/RestaurantRaterApplication.java", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "src/main/java/com/karthik/restaurant_rater/RestaurantRaterApplication.java" }
+    ]
+  }
