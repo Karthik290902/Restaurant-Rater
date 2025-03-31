@@ -24,7 +24,7 @@ function App() {
   const fetchDishes = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/restaurant-dishes"
+        `${process.env.REACT_APP_BACKEND_BASE_URL}/api/restaurant-dishes`
       );
       setDishes(response.data);
     } catch (error) {
@@ -46,13 +46,13 @@ function App() {
       if (editingId) {
         // Update existing dish
         await axios.put(
-          `http://localhost:8080/api/restaurant-dishes/${editingId}`,
+          `${process.env.REACT_APP_BACKEND_BASE_URL}/api/restaurant-dishes/${editingId}`,
           formData
         );
       } else {
         // Add new dish
         await axios.post(
-          "http://localhost:8080/api/restaurant-dishes",
+          `${process.env.REACT_APP_BACKEND_BASE_URL}/api/restaurant-dishes`,
           formData
         );
       }
@@ -76,7 +76,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/restaurant-dishes/${id}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_BASE_URL}/api/restaurant-dishes/${id}`);
       fetchDishes();
     } catch (error) {
       console.error("Error deleting dish:", error);
